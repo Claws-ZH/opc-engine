@@ -14,7 +14,7 @@ async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule, { bufferLogs: false });
   app.enableShutdownHooks();
   await app.listen(config.port);
-  new Logger('bootstrap').log(`opc-engine listening on :${config.port}`);
+  new Logger('bootstrap').log(`opc-marketing-engine listening on :${config.port}`);
 }
 
 void bootstrap();

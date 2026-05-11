@@ -1,4 +1,4 @@
-# opc-engine
+# opc-marketing-engine
 
 AI-native automation engine for the One-Person Company (OPC). Publish, schedule,
 and engage on social platforms via a single MCP-exposed NestJS service.
@@ -73,7 +73,7 @@ Cursor / Claude Desktop config snippet:
 ```json
 {
   "mcpServers": {
-    "opc-engine": {
+    "opc-marketing-engine": {
       "type": "http",
       "url": "http://localhost:3000/mcp",
       "headers": {

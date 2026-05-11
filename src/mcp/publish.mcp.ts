@@ -29,7 +29,7 @@ export class PublishMcp {
    */
   buildServer() {
     return createSdkMcpServer({
-      name: 'opc-engine',
+      name: 'opc-marketing-engine',
       version: '0.1.0',
       tools: [
         tool(
