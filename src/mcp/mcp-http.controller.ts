@@ -39,9 +39,6 @@ export class McpHttpController {
       return;
     }
 
-    // One transport + server per request keeps user context cleanly scoped.
-    // For production, reuse sessions via `sessionIdGenerator` and a session
-    // map — omitted here to keep MVP obvious.
     const server = this.publishMcp.buildServer();
     const transport = new StreamableHTTPServerTransport({
       sessionIdGenerator: undefined, // stateless mode
@@ -53,7 +50,7 @@ export class McpHttpController {
 
     await requestContext.run(user, async () => {
       try {
-        await server.connect(transport);
+        await server.instance.connect(transport);
         await transport.handleRequest(req, res, req.body);
       } catch (err) {
         this.logger.error(
